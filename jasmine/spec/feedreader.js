@@ -98,18 +98,18 @@ $(function() {
 
     /* test that check if there is changable rss feed */
     describe('New Feed Selection', function () {
-        let headerTitle;
+        let feedInfo;
 
         /* test that ensures when a new feed is loaded
          * by the loadFeed function that the content actually changes.
          */
         beforeAll(function (done) {
-            headerTitle = $('.header-title').html();
+            feedInfo = $('.feed').html();
             loadFeed(1, done);
         });
 
         it('changing feed', function () {
-            expect(true).toBe(headerTitle !== $('.header-title').html());
+            expect($('.feed').html()).not.toEqual(feedInfo);
         })
     });
 }());
